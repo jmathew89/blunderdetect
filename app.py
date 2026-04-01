@@ -12,7 +12,7 @@ import requests as http
 app = Flask(__name__)
 
 # ── Config ───────────────────────────────────────────────────────────────────
-STOCKFISH_PATH = r"C:\stockfish\stockfish-windows-x86-64-avx2.exe"
+STOCKFISH_PATH = os.environ.get("STOCKFISH_PATH", r"C:\stockfish\stockfish-windows-x86-64-avx2.exe")
 GROQ_CLIENT    = groq.Groq(api_key=os.environ.get("GROQ_API_KEY"))
 DEPTH          = 16
 
